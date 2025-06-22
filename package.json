@@ -50,6 +50,7 @@
 		"@zachleat/heading-anchors": "^1.0.1",
 		"dotenv": "^16.4.7",
 		"eleventy-plugin-icons": "^4.5.1",
+		"ical-generator": "^9.0.0",
 		"prismjs": "^1.29.0",
 		"simple-icons": "^14.2.0"
 	}

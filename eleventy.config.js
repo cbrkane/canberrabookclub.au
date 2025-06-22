@@ -100,7 +100,7 @@ export default async function(eleventyConfig) {
 	// Filters
 
 	eleventyConfig.addFilter("futureDate", function(events) {
-		return events.filter(event => new Date(event.data.eventdate) >= new Date());
+		return events.filter(event => new Date(event.data.start) >= new Date());
 	  });
 
 	eleventyConfig.addPlugin(pluginFilters);
@@ -128,8 +128,8 @@ export default async function(eleventyConfig) {
 	});
 
 	eleventyConfig.addCollection("eventsdatesort", function (collectionsApi) {
-		return collectionsApi.getFilteredByTag("events").sort(function (a, b) {
-			return a.data.eventdate - b.data.eventdate; // sort by date - descending
+		return collectionsApi.getFilteredByTag("events").filter(event => new Date(event.data.start) >= new Date()).sort(function (a, b) {
+			return a.data.start - b.data.start; // sort by date - descending
 		});
 	});
 

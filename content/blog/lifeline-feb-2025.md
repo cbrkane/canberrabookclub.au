@@ -3,7 +3,7 @@ title: February Lifeline Book Fair
 description: Lifeline book fair is on 7th - 9th February 2025 at EPIC. 
 date: 2025-01-19
 eventdate: 2025-02-07
-tags: [posts, events]
+tags: [posts]
 ---
 
 The Lifeline book fair is on again! Always a great place to pick up a stack of new books to read at the book club. 
