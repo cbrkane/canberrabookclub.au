@@ -4,12 +4,14 @@ const {
   ICalCalendarMethod,
 } = require('ical-generator')
 
+
 module.exports = class FeedTemplate {
   // Setup Eleventy data for this template,
   // namely set the name of the file to be generated
   data() {
     return {
       permalink: 'events.ics',
+      layout: '',
     }
   }
 
