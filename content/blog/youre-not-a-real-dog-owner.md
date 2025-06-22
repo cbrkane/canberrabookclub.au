@@ -1,5 +1,6 @@
 ---
 title: Review - You're Not a Real Dog Owner Until..
+description: A cute little coffee table book idea. 
 author: Kane
 date: 2025-01-18
 tags: [posts, review]
