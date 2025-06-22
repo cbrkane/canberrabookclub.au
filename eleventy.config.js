@@ -94,6 +94,7 @@ export default async function(eleventyConfig) {
 
 		sharpOptions: {
 			animated: true,
+			withoutEnlargement: false,
 		},
 	});
 
@@ -143,7 +144,7 @@ export default async function(eleventyConfig) {
 				<i>by ${res.author}</i>
 			</div>
 			<p>${res.rating} from ${res.ratings_count} ratings</p>
-			<img eleventy:widths="200" eleventy:optional="placeholder" src="${res.image}", alt="Book Cover">
+			<img eleventy:widths="200" eleventy:optional="placeholder"  src="${res.image}", alt="${res.title} cover">
 		</a>
 		</div>
 		`;
@@ -152,15 +153,15 @@ export default async function(eleventyConfig) {
 	  eleventyConfig.addAsyncShortcode("getBookSlug", async function (slug = "") {
 		const res = await getBookSlug(slug);
 		return `
-		<div style="text-align: center; justify-self: center; height: auto; min-height:400px">
+		<div style="position: relative; text-align: center; justify-self: center; width: 100%; ">
 			<a href="https://hardcover.app/books/${res.slug}">
-			<div style="height: auto; min-height: 50px;"><b>${res.title}</b></div>
-			<div>
-				<i>by ${res.author}</i>
-			</div>
-			<p>${res.rating} from ${res.ratings_count} ratings</p>
-			<img eleventy:widths="200" eleventy:optional="placeholder" src="${res.image}", alt="Book Cover">
-		</a>
+				<div style="position: absolute; z-index:100; height: auto; max-height: 100%;  background: rgba(47, 79, 79, 0.7);  color: white;  width: 100%; left: 0%; bottom: 0%;">
+					<p style=" filter: contrast(9) drop-shadow(.05em .05em black); "><b>${res.title}</b></p>
+					<p style="filter: contrast(1) drop-shadow(.05em .05em  black);"><i>by ${res.author}</i></p>
+					<p style="filter: contrast(1) drop-shadow(.05em .05em black);">${res.rating} from ${res.ratings_count} ratings</p>
+				</div>
+				<img eleventy:heights="200px" eleventy:optional="placeholder" style="display: block; height: auto; width: 100%;" src="${res.image}", alt="Book Cover">
+			</a>
 		</div>
 		`;
 	  });
