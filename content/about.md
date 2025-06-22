@@ -20,7 +20,7 @@ See below for a list of other book clubs we are aware of in the region. Let us k
 
 ### General
 - [BookFace Book Club](https://www.bookfacestores.com.au/book-club)
-- [Paperchain Cosy Reading Book Club](https://www.facebook.com/groups/CosyReadingBookClub) [2](https://www.instagram.com/cosyreadingbookclub/) [3](https://paperchainbookstoreblog.com/2019/07/30/cosy-reading-book-club/)
+- [Paperchain Cosy Reading Book Club](https://www.facebook.com/groups/CosyReadingBookClub) [[2]](https://www.instagram.com/cosyreadingbookclub/) [[3]](https://paperchainbookstoreblog.com/2019/07/30/cosy-reading-book-club/)
 - [Canberra Popular Fiction Book Club](https://www.meetup.com/en-au/canberra-ya-book-club/)
 - [Canberra Social Book Club](https://www.facebook.com/groups/255187487308088/)
 - [Libraries ACT Book of the Month](https://www.facebook.com/groups/1202736400172537)

@@ -6,7 +6,7 @@
 		<link rel="icon" type="image/png" href="/favicon.ico" sizes="96x96">
 		<title>{{ title or metadata.title }}</title>
 		<meta name="description" content="{{ description or metadata.description | escape }}">
-		<link rel="canonical" href={{ page.url }}">
+		<link rel="canonical" href="{{ page.url }}">
 		<meta name="robots" content="index, follow" />
 		<link rel="alternate" href="feed/feed.xml" type="application/atom+xml" title="{{ metadata.title }}">
 		<meta name="msvalidate.01" content="A107FFD3F715D96B3B1A1330F82511D7" />
@@ -14,7 +14,7 @@
 		<meta property="og:title" content="{{ title or metadata.title  | escape }}"/>
 		<meta property="og:url" content="{{  page.url  | escape }}" />
 		<meta property="og:description" content="{{ description or metadata.description | escape }}" />
-		  <meta property="og:image" content="/img/logo.png" />
+		<meta property="og:image" content="/img/logo.png" />
 		<meta property="og:type" content="article" />
 
 		{#- Uncomment this if you’d like folks to know that you used Eleventy to build your site!  #}
