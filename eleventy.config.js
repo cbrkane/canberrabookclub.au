@@ -69,7 +69,7 @@ export default async function(eleventyConfig) {
 			subtitle: "The best book club in Canberra",
 			base: "https://canberrabookclub.au/",
 			author: {
-				name: "CBBC"
+				name: "CBBC	"
 			}
 		}
 	});
@@ -118,6 +118,12 @@ export default async function(eleventyConfig) {
 	//
 	eleventyConfig.addPlugin(iconsPlugin, {
 		sources: [{ name: 'lucide', path: 'node_modules/simple-icons/icons', default: true }],
+	});
+
+	eleventyConfig.addCollection("eventsdatesort", function (collectionsApi) {
+		return collectionsApi.getFilteredByTag("events").sort(function (a, b) {
+			return a.data.eventdate - b.data.eventdate; // sort by date - descending
+		});
 	});
 };
 

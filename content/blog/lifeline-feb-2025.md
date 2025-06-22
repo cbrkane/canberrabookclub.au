@@ -1,7 +1,8 @@
 ---
 title: February Lifeline Book Fair
 description: 
-date: 2025-02-07
+date: 2025-01-18
+eventdate: 2025-02-07
 tags: [posts, events]
 ---
 
