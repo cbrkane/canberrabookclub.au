@@ -1,22 +1,24 @@
 ---js
 const eleventyNavigation = {
-	key: "About",
+	key: "Explore",
 	order: 10
 };
 ---
-# About
-
-Started in 2024 this book club has rapidly grown in popularity to now having upwards of 15 attendees each month.
 
 ## Where else are we?
 
-- [Meetup](https://www.meetup.com/canberras-best-book-club/)
+We started on Meetup.com but they increased the fees to a point that it is not viable for a little community book club (500 AUD/year!!!!). We are deleting the Meetup as of July 2025 so any book clubs you find on there are not us! 
+
+Besides keeping up to date with the [RSS](/feed/rss.xml) and [ical](/feed/events.ics) feeds on this website you can still keep in touch with us on the below services. 
+
+- [Oddcircles](https://www.oddcircles.com/groups/d7097716-5288-40c8-ab03-3ce0fe50e5b0/Canberras%20Best%20Book%20Club)
+- [Eventbrite](https://www.eventbrite.com.au/o/canberras-best-book-club-112124478441)
 - [Facebook](https://www.facebook.com/profile.php?id=61562383891905)
 
 ## Other Canberra Book Clubs
 
 Canberra's Best Book Club not for you? 
-See below for a list of other book clubs we are aware of in the region. Let us know if yours is missing! 
+See below for a list of other book clubs we are aware of in the region. Let us know if yours is missing by emailing [contact@canberrabookclub.au](mailto:contact@canberrabookclub.au).
 
 ### General
 - [BookFace Book Club](https://www.bookfacestores.com.au/book-club)
