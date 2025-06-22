@@ -1,0 +1,50 @@
+---js
+const eleventyNavigation = {
+	key: "Home",
+	order: 1
+};
+
+const numberOfLatestPostsToShow = 3;
+---
+
+<p>Welcome to the best book club in Canberra.</p>
+
+<p>What sets us apart is that rather than having a set book each month you can read anything you want. 
+<ul>
+<li>&check; Manga.</li>
+<li>&check; Classic Lit.</li>
+<li>&check; Fantasy.</li>
+<li>&check; Romance.</li>
+<li>&check; Car maintenance manual.</li>
+<li>&check; Anything!</li>
+<li>&check; Nothing!</li>
+</ul>
+</p>
+
+<p>We come together on the second(ish) Wednesday(ish) of the month and go around the table to chat about whatever you have read. There is a never a fixed book to read so you can participate, no matter your interest.</p>
+
+<p>Based on our sister group "Cheltenham's Best Book Club" - You won't find a book club in Canberra that opens your reading horizons more than this one.</p>
+
+<p>So, come along and have a chat. You don't even have to have finished a book this month. Everyone is welcome.</p>
+
+{% set postsCount = collections.posts | length %}
+{% set latestPostsCount = postsCount | min(numberOfLatestPostsToShow) %}
+<h1>Latest {{ latestPostsCount }} Post{% if latestPostsCount != 1 %}s{% endif %}</h1>
+
+{% set postslist = collections.posts | head(-1 * numberOfLatestPostsToShow) %}
+{% set postslistCounter = postsCount %}
+{% include "postslist.njk" %}
+
+{% set morePosts = postsCount - numberOfLatestPostsToShow %}
+{% if morePosts > 0 %}
+<p>{{ morePosts }} more post{% if morePosts != 1 %}s{% endif %} can be found in <a href="blog.njk">the archive</a>.</p>
+{% endif %}
+
+{# List every content page in the project #}
+{#
+<ul>
+	{%- for entry in collections.all %}
+	<li><a href="{{ entry.url }}"><code>{{ entry.url }}</code></a></li>
+	{%- endfor %}
+</ul>
+#}
