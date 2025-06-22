@@ -98,6 +98,11 @@ export default async function(eleventyConfig) {
 	});
 
 	// Filters
+
+	eleventyConfig.addFilter("futureDate", function(events) {
+		return events.filter(event => new Date(event.data.eventdate) >= new Date());
+	  });
+
 	eleventyConfig.addPlugin(pluginFilters);
 
 	eleventyConfig.addPlugin(IdAttributePlugin, {
@@ -325,3 +330,5 @@ async function getBook(title="", author="") {
 		};
 	}
   }
+
+
