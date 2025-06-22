@@ -133,8 +133,8 @@ export default async function(eleventyConfig) {
 		return `
 		<div style="text-align: center; justify-self: center;">
 		<a href="https://hardcover.app/books/${res.slug}">
-		<p style="height: 50px"><b>${res.title}</b></p>
-		<p><i>by ${res.author}</i></p>
+		<div style="	height: auto; min-height: 50px;"><b>${res.title}</b></div>
+		<div><i>by ${res.author}</i></div>
 		<p>${res.rating} from ${res.ratings_count} ratings</p>
 		<img eleventy:optional eleventy:widths="200" eleventy:optional="placeholder" src="${res.image}", alt="Book Cover">
 		</a>
