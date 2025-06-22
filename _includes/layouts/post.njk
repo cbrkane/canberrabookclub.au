@@ -17,8 +17,8 @@ layout: layouts/base.njk
 
 {%- if start %}
 <ul>
-<li><b><i>When:</i></b> {{page.start.toLocaleDateString("en-GB", { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' }) }} {{page.start.toLocaleTimeString("en-GB") }} - {{page.end.toLocaleTimeString("en-GB") }}
-<li><b><i>Where:</i></b> {{page.location }}
+<li><b><i>When:</i></b> {{start.toLocaleString("en-GB", { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' }) }} {{start.toLocaleTimeString("en-GB") }} - {{end.toLocaleTimeString("en-GB") }}
+<li><b><i>Where:</i></b> {{location }}
 </ul>
 {%- endif %}
 
