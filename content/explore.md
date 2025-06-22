@@ -14,6 +14,7 @@ Besides keeping up to date with the [RSS](/feed/rss.xml) and [ical](/feed/events
 - [Oddcircles](https://www.oddcircles.com/groups/d7097716-5288-40c8-ab03-3ce0fe50e5b0/Canberras%20Best%20Book%20Club)
 - [Eventbrite](https://www.eventbrite.com.au/o/canberras-best-book-club-112124478441)
 - [Facebook](https://www.facebook.com/profile.php?id=61562383891905)
+- [Bookclubs.com](https://bookclubs.com/canberras-best-book-club/)
 
 ## Other Canberra Book Clubs
 
