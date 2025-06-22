@@ -8,6 +8,8 @@ import pluginFilters from "./_config/filters.js";
 
 import iconsPlugin from "eleventy-plugin-icons";
 
+import Fetch from "@11ty/eleventy-fetch";
+
 /** @param {import("@11ty/eleventy").UserConfig} eleventyConfig */
 export default async function(eleventyConfig) {
 	// Drafts, see also _data/eleventyDataSchema.js
@@ -125,6 +127,20 @@ export default async function(eleventyConfig) {
 			return a.data.eventdate - b.data.eventdate; // sort by date - descending
 		});
 	});
+
+	eleventyConfig.addAsyncShortcode("getBook", async function (title = "", author = "") {
+		const res = await getBook(title, author);
+		return `
+		<div style="text-align: center; justify-self: center;">
+		<a href="https://hardcover.app/books/${res.slug}">
+		<p style="height: 50px"><b>${res.title}</b></p>
+		<p><i>by ${res.author}</i></p>
+		<p>${res.rating} from ${res.ratings_count} ratings</p>
+		<img eleventy:optional eleventy:widths="200" eleventy:optional="placeholder" src="${res.image}", alt="Book Cover">
+		</a>
+		</div>
+		`;
+	  });
 };
 
 export const config = {
@@ -165,3 +181,68 @@ export const config = {
 
 	// pathPrefix: "/",
 };
+
+
+import 'dotenv/config';
+
+
+const url = "https://hardcover-hasura-production-1136269bb9de.herokuapp.com/v1/graphql"
+const key = process.env.HARDCOVER_API_KEY;
+
+
+async function getBook(title="", author="") {
+	try {
+	let  data  = await Fetch(url, {
+	  duration: '1d',
+	  type: 'json',
+	  fetchOptions: {
+		headers: {
+		  'content-type': 'application/json',
+		  'authorization': key,
+		},
+		method: 'POST',
+		body: JSON.stringify({
+		  query: `
+				query getBook {
+					books(
+					where: {title: {_ilike: "${title}"}, contributions: {author: {name: {_ilike: "${author}"}, }}}
+					order_by: {ratings_count: desc}
+					) {
+					id
+					title
+					image {
+						url
+					}
+					rating
+					ratings_count
+					description
+					contributions {
+						author {
+						name
+						}
+					}
+					slug
+					}
+				}`,
+		}),
+	  },
+	});
+  
+	return {
+			title: data?.data?.books[0]?.title,
+			rating: (data?.data?.books[0]?.rating || 0).toFixed(2),
+			ratings_count: data?.data?.books[0]?.ratings_count,
+			description: data?.data.books[0]?.description || "No Description",
+			author: data?.data?.books[0]?.contributions[0]?.author?.name,
+			image: data?.data?.books[0]?.image?.url,
+			slug: data?.data?.books[0]?.slug,
+		};
+	} catch (e){
+		console.log("Error", e.stack);
+    console.log("Error", e.name);
+    console.log("Error", e.message);
+		return {
+			title: "Not found",
+		};
+	}
+  }

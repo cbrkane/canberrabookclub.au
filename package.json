@@ -46,7 +46,9 @@
 		"zod-validation-error": "^3.3.1"
 	},
 	"dependencies": {
+		"@11ty/eleventy-fetch": "^5.0.2",
 		"@zachleat/heading-anchors": "^1.0.1",
+		"dotenv": "^16.4.7",
 		"eleventy-plugin-icons": "^4.5.1",
 		"prismjs": "^1.29.0",
 		"simple-icons": "^14.2.0"

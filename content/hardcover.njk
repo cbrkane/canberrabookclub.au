@@ -1,0 +1,50 @@
+---js
+const eleventyNavigation = {
+	key: "Books",
+	order: 4
+};
+---
+
+<h1> Books we have talked about </h1>
+
+<p>Thanks to <a href="https://hardcover.app"> Hardcover</a> API for the book data.</p>
+
+<div style="width:100%; display: grid; grid-template-columns: 2fr 2fr 2fr; row-gap: 50px; column-gap: 50px;">
+{% getBook "The will of the many", "james islington" %}
+{% getBook "The Serpent & the Wings of Night", "Carissa%" %}
+{% getBook "The Island of Missing Trees", "Elif Shafak" %}
+{% getBook "The dictionary of lost words", "pip williams" %}
+{% getBook "Yumi and the nightmare painter", "brandon sanderson" %}
+{% getBook "Anna Karenina", "Leo Tolstoy" %}
+{% getBook "the midnight library", "matt haig" %}
+{% getBook "The blacktongue thief", "christopher%" %}
+{% getBook "empire of silence", "christopher%" %}
+{% getBook "shroud", "adrian tchaikovsky" %}
+{% getBook "jade city", "%lee" %}
+{% getBook "I who have never known men", "%" %}
+{% getBook "the ledge", "christian white" %}
+{% getBook "the mercy of gods", "%" %}
+{% getBook "throne of glass", "%" %}
+{% getBook "fourth wing", "%" %}
+{% getBook "the invisible life of addie%", "%" %}
+{% getBook "glasshouse", "charles stross" %}
+{% getBook "Finding Your People: The ultimate guide to friendship", "%" %}
+{% getBook "%", "robin hobb" %}
+{% getBook "everyone this christmas has a secret", "%" %}
+{% getBook "master of the senate", "%" %}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
