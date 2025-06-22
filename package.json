@@ -47,6 +47,8 @@
 	},
 	"dependencies": {
 		"@zachleat/heading-anchors": "^1.0.1",
-		"prismjs": "^1.29.0"
+		"eleventy-plugin-icons": "^4.5.1",
+		"prismjs": "^1.29.0",
+		"simple-icons": "^14.2.0"
 	}
 }

@@ -40,7 +40,11 @@
 		<a href="#skip" class="visually-hidden">Skip to main content</a>
 
 		<header>
-			<h1><a href="/" class="home-link">{{ metadata.title }}</a></h1>
+			<a href="/" class="home-link">{{ metadata.title }}</a>
+			<a href="https://www.meetup.com/canberras-best-book-club">{% icon "meetup", width="20", height="20" %}</a>
+			<a href="https://www.facebook.com/people/Canberras-Best-Book-Club/61562383891905/">{% icon "facebook", width="16", height="16" %}</a>
+			<a href="/feed/feed.xml">{% icon "rss", width="16", height="16" %}</a>
+
 
 			{#- Read more about `eleventy-navigation` at https://www.11ty.dev/docs/plugins/navigation/ #}
 			<nav>

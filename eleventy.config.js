@@ -6,6 +6,8 @@ import { eleventyImageTransformPlugin } from "@11ty/eleventy-img";
 
 import pluginFilters from "./_config/filters.js";
 
+import iconsPlugin from "eleventy-plugin-icons";
+
 /** @param {import("@11ty/eleventy").UserConfig} eleventyConfig */
 export default async function(eleventyConfig) {
 	// Drafts, see also _data/eleventyDataSchema.js
@@ -52,22 +54,22 @@ export default async function(eleventyConfig) {
 		outputPath: "/feed/feed.xml",
 		stylesheet: "pretty-atom-feed.xsl",
 		templateData: {
-			eleventyNavigation: {
-				key: "Feed",
-				order: 4
-			}
+		//	eleventyNavigation: {
+		//		key: "Feed",
+		//		order: 4
+		//	}
 		},
 		collection: {
 			name: "posts",
-			limit: 10,
+			limit: 100,
 		},
 		metadata: {
 			language: "en",
-			title: "Blog Title",
-			subtitle: "This is a longer description about your blog.",
-			base: "https://example.com/",
+			title: "Canberra's Best Book Club",
+			subtitle: "The best book club in Canberra",
+			base: "https://canberrabookclub.au/",
 			author: {
-				name: "Your Name"
+				name: "CBBC"
 			}
 		}
 	});
@@ -113,6 +115,10 @@ export default async function(eleventyConfig) {
 	// https://www.11ty.dev/docs/copy/#emulate-passthrough-copy-during-serve
 
 	// eleventyConfig.setServerPassthroughCopyBehavior("passthrough");
+	//
+	eleventyConfig.addPlugin(iconsPlugin, {
+		sources: [{ name: 'lucide', path: 'node_modules/simple-icons/icons', default: true }],
+	});
 };
 
 export const config = {
