@@ -10,7 +10,7 @@ module.exports = class FeedTemplate {
   // namely set the name of the file to be generated
   data() {
     return {
-      permalink: 'feed/events.ics',
+      permalink: '/feed/events.ics',
       layout: '',
     }
   }
