@@ -39,7 +39,7 @@ module.exports = class FeedTemplate {
         start: page.data.start,
         end: page.data.end,
         summary: page.data.title,
-        //description: page.data.template.frontMatter.content,
+        description: page.data.description,
         location: page.data.location,
       })
 
