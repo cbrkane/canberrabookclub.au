@@ -27,7 +27,8 @@ See below for a list of other book clubs we are aware of in the region.
 - [Canberra Fantasy Book Club](https://www.facebook.com/groups/7011704425594033/)
 - [Cafe SteppingStone Silent Book Club](https://cafesteppingstone.com/events)
 - [Canberra Popular Fiction Book Club](https://www.meetup.com/en-au/canberra-ya-book-club/)
+- [The Rainbow Holstein Book Club](https://www.bookcow.com.au/events)
 
 ### South
 
-I'm not aware of any book clubs south side. Let me know if you have one! {% icon "star" %}
+I'm not aware of any book clubs south side. Let me know if you have one! 
