@@ -143,6 +143,22 @@ export default async function(eleventyConfig) {
 		</div>
 		`;
 	  });
+
+	  eleventyConfig.addAsyncShortcode("getBookSlug", async function (slug = "") {
+		const res = await getBookSlug(slug);
+		return `
+		<div style="text-align: center; justify-self: center; height: auto; min-height:400px">
+			<a href="https://hardcover.app/books/${res.slug}">
+			<div style="height: auto; min-height: 50px;"><b>${res.title}</b></div>
+			<div>
+				<i>by ${res.author}</i>
+			</div>
+			<p>${res.rating} from ${res.ratings_count} ratings</p>
+			<img eleventy:widths="200" eleventy:optional="placeholder" src="${res.image}", alt="Book Cover">
+		</a>
+		</div>
+		`;
+	  });
 };
 
 export const config = {
@@ -188,8 +204,11 @@ export const config = {
 import 'dotenv/config';
 
 
-const url = "https://hardcover-hasura-production-1136269bb9de.herokuapp.com/v1/graphql"
+//const url = "https://hardcover-hasura-production-1136269bb9de.herokuapp.com/v1/graphql";
+const url = "https://api.hardcover.app/v1/graphql";
 const key = process.env.HARDCOVER_API_KEY;
+console.log("INFO", "API KEY", key)
+console.log("INFO", "URL", url);
 
 
 async function getBook(title="", author="") {
@@ -234,7 +253,7 @@ async function getBook(title="", author="") {
 			title: data?.data?.books[0]?.title,
 			rating: (data?.data?.books[0]?.rating || 0).toFixed(2),
 			ratings_count: data?.data?.books[0]?.ratings_count,
-			description: data?.data.books[0]?.description || "No Description",
+			//description: data?.data.books[0]?.description || "No Description",
 			author: data?.data?.books[0]?.contributions[0]?.author?.name,
 			image: data?.data?.books[0]?.image?.url,
 			slug: data?.data?.books[0]?.slug,
@@ -245,6 +264,64 @@ async function getBook(title="", author="") {
     console.log("Error", e.message);
 		return {
 			title: "Not found",
+		};
+	}
+  }
+
+  async function getBookSlug(slug="") {
+	try {
+	console.log("FETCHING", slug);
+	let  data  = await Fetch(url, {
+	  duration: '1d',
+	  type: 'json',
+	  fetchOptions: {
+		headers: {
+		  'content-type': 'application/json',
+		  'authorization': key,
+		},
+		method: 'POST',
+		body: JSON.stringify({
+		  query: `query getBook {
+					books(
+					where: {slug: {_eq: "${slug}"}}
+					order_by: {ratings_count: desc}
+					) {
+					id
+					title
+					image {
+						url
+					}
+					rating
+					ratings_count
+					description
+					contributions {
+						author {
+						name
+						}
+					}
+					slug
+					}
+				}`,
+		}),
+	  },
+	});
+	//data = JSON.parse(data);
+	return {
+			title: data?.data?.books[0]?.title,
+			rating: (data?.data?.books[0]?.rating || 0).toFixed(2),
+			ratings_count: data?.data?.books[0]?.ratings_count,
+			description: data?.data.books[0]?.description || "No Description",
+			author: data?.data?.books[0]?.contributions[0]?.author?.name,
+			image: data?.data?.books[0]?.image?.url,
+			slug: data?.data?.books[0]?.slug,
+		};
+	} catch (e){
+		console.log("Error", e.stack);
+    	console.log("Error", e.name);
+    	console.log("Error", e.message);
+		return {
+			title: slug,
+			description: e.message
 		};
 	}
   }
