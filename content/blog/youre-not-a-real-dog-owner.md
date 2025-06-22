@@ -8,7 +8,6 @@ tags: [posts, review]
 
 <p><img src="covers/youre-not-a-real-dog-owner.png" alt="book cover"></p>
 
-## Details
 Note: For transparency - I received this book as an eARC from NetGalley. This will not impact my review. 
 
 - Author: Scott Dooley; Jason Chatfield
