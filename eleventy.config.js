@@ -131,12 +131,14 @@ export default async function(eleventyConfig) {
 	eleventyConfig.addAsyncShortcode("getBook", async function (title = "", author = "") {
 		const res = await getBook(title, author);
 		return `
-		<div style="text-align: center; justify-self: center;">
-		<a href="https://hardcover.app/books/${res.slug}">
-		<div style="	height: auto; min-height: 50px;"><b>${res.title}</b></div>
-		<div><i>by ${res.author}</i></div>
-		<p>${res.rating} from ${res.ratings_count} ratings</p>
-		<img eleventy:optional eleventy:widths="200" eleventy:optional="placeholder" src="${res.image}", alt="Book Cover">
+		<div style="text-align: center; justify-self: center; height: auto; min-height:400px">
+			<a href="https://hardcover.app/books/${res.slug}">
+			<div style="height: auto; min-height: 50px;"><b>${res.title}</b></div>
+			<div>
+				<i>by ${res.author}</i>
+			</div>
+			<p>${res.rating} from ${res.ratings_count} ratings</p>
+			<img eleventy:widths="200" eleventy:optional="placeholder" src="${res.image}", alt="Book Cover">
 		</a>
 		</div>
 		`;
