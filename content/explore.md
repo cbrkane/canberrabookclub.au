@@ -41,4 +41,4 @@ See below for a list of other book clubs we are aware of in the region. Let us k
 - [Cafe SteppingStone Silent Book Club](https://cafesteppingstone.com/events)
 - [Gungahlin Book Club (Defence Members & Families)](https://www.facebook.com/groups/863920990336086/)
 - [Books n Frocks (Canberra Inner North Women’s Book Club)](https://www.facebook.com/groups/878213813300306/)
-
+- [Greater Canberra Housing Book Club](https://www.facebook.com/GreaterCanberra/)
