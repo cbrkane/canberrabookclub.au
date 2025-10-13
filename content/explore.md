@@ -11,7 +11,6 @@ We started on Meetup.com but they increased the fees to a point that it is not v
 
 Besides keeping up to date with the [RSS](/feed/rss.xml) and [ical](/feed/events.ics) feeds on this website you can still keep in touch with us on the below services. 
 
-- [Oddcircles](https://www.oddcircles.com/groups/d7097716-5288-40c8-ab03-3ce0fe50e5b0/Canberras%20Best%20Book%20Club)
 - [Eventbrite](https://www.eventbrite.com.au/o/canberras-best-book-club-112124478441)
 - [Facebook](https://www.facebook.com/profile.php?id=61562383891905)
 - [Bookclubs.com](https://bookclubs.com/canberras-best-book-club/)
