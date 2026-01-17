@@ -247,7 +247,7 @@ async function getBookList(slug="canberras-best-book-club-previously-read") {
 	try {
 	console.log(`Fetching hardcover list ${slug}`);
 	let  data  = await Fetch(url, {
-	  duration: '1h',
+	  duration: '15m',
 	  type: 'json',
 	  fetchOptions: {
 		headers: {
