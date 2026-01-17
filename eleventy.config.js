@@ -155,7 +155,7 @@ export default async function(eleventyConfig) {
 		return `
 		<div style="position: relative; text-align: center; justify-self: center; width: 100%; ">
 			<a href="https://hardcover.app/books/${res.slug}">
-				<div style="position: absolute; z-index:100; height: auto; max-height: 100%;  background: rgba(47, 79, 79, 0.7);  color: white;  width: 100%; left: 0%; bottom: 0%;">
+				<div style="position: absolute; z-index:100; height: auto; max-height: 100%;  background: rgba(47, 79, 79, 0.7	);  color: white;  width: 100%; left: 0%; bottom: 0%;">
 					<p style=" filter: contrast(9) drop-shadow(.05em .05em black); "><b>${res.title}</b></p>
 					<p style="filter: contrast(1) drop-shadow(.05em .05em  black);"><i>by ${res.author}</i></p>
 					<p style="filter: contrast(1) drop-shadow(.05em .05em black);">${res.rating} from ${res.ratings_count} ratings</p>
@@ -164,6 +164,32 @@ export default async function(eleventyConfig) {
 			</a>
 		</div>
 		`;
+	  });
+
+	  eleventyConfig.addAsyncShortcode("getBookList", async function (slug) {
+	
+		const res = await getBookList(slug);
+		let html = `<p><b>Our little book club has discussed over ${res.length} books and counting!</b></p>
+		<div style="width:100%; display: grid; grid-template-columns: 30% 30% 30%; row-gap: 5px; column-gap: 5px;">`;
+		for (let i in res){
+		const book = res[i].book;
+		html +=	`
+
+		<div style="position: relative; text-align: center; justify-self: center; width: 100%; ">
+			<a href="https://hardcover.app/books/${book.slug}">
+				<div style="position: absolute; z-index:100; height: auto; max-height: 100%;  background: rgba(47, 79, 79, 0.7	);  color: white;  width: 100%; left: 0%; bottom: 0%;">
+					<p style=" filter: contrast(9) drop-shadow(.05em .05em black); margin-bottom: 5px;"><b>${book.title.split(":")[0]}</b></p>
+					<p style="filter: contrast(1) drop-shadow(.05em .05em  black); margin-top: 5px; margin-bottom: 5px;"><i>by ${book.contributions[0]?.author.name}</i></p>
+					<p style="filter: contrast(1) drop-shadow(.05em .05em black); margin-top: 5px;">${(book.rating || 0).toFixed(2)} from ${book.ratings_count} ratings</p>
+				</div>
+				<img eleventy:heights="200px" eleventy:optional="placeholder" style="display: block; height: auto; width: 100%;" src="${book.image.url}", alt="Book Cover">
+			</a>
+		</div>
+
+		`
+		}
+		html += "</div>";
+		return html;
 	  });
 };
 
@@ -216,6 +242,58 @@ const key = process.env.HARDCOVER_API_KEY;
 console.log("INFO", "API KEY", key)
 console.log("INFO", "URL", url);
 
+
+async function getBookList(slug="canberras-best-book-club-previously-read") {
+	try {
+	console.log(`Fetching hardcover list ${slug}`);
+	let  data  = await Fetch(url, {
+	  duration: '1h',
+	  type: 'json',
+	  fetchOptions: {
+		headers: {
+		  'content-type': 'application/json',
+		  'authorization': key,
+		},
+		method: 'POST',
+		body: JSON.stringify({
+		  query: `
+		  query getList {
+			lists(where: {slug: {_eq: "${slug}"}}) {
+				list_books(order_by: {book: {rating: desc_nulls_last}}) {
+				book {
+				title
+				image {
+				  url
+				}
+				rating
+				ratings_count
+				description
+				contributions {
+				  author {
+					name
+				  }
+				}
+				slug
+			  }
+			  }
+		  
+			}
+		  }
+		  `,
+		}),
+	  },
+	});
+	return data?.data?.lists[0]?.list_books;
+} catch (e){
+	console.log("Error", e.stack);
+	console.log("Error", e.name);
+	console.log("Error", e.message);
+	return {
+		title: slug,
+		description: e.message
+	};
+}
+}
 
 async function getBook(title="", author="") {
 	try {
