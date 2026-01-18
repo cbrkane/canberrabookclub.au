@@ -15,4 +15,4 @@ The prose and story though are what really let this book down. The prose in part
 
 The characters were also extremely uninteresting. As a reader who generally favours character driven narrative I just simply didn't really care about either of the main characters and still after reading don't really feel any attachment, or feel like I really know them at all. <details><summary>spoiler</summary>Towards the very end - one of the characters is gunned down in a speculated suicide and it had no emotional impact whatsoever.</details>
 
-Overall I can't recommend this book except as a reference to compare modern sci-fi to and understand how it 
+Overall I can't recommend this book except as a reference to compare modern sci-fi to and understand how it has evolved (or not). 
