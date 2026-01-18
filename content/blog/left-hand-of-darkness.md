@@ -5,7 +5,9 @@ tags: [posts,review]
 author: Kane
 rating: ★★★☆☆
 ---
-Rating: ★★★☆☆
+{% getBookSlug the-left-hand-of-darkness %}
+
+My Rating: ★★★☆☆
 
 `The Left Hand of Darkness` was difficult to enjoy in a modern context. Being originally published in 1969 it was obviously at the forefront of science fiction and paved the way for the genre I love today; but, over 50 years later I don't think it holds up as a novel that anyone needs to read, unlike other classic science fiction.
 
