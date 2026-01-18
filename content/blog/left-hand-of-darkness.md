@@ -1,6 +1,6 @@
 ---
 title: The Left Hand of Darkness - Ursula K. Le Guin
-date: 2025-01-18
+date: 2026-01-18
 tags: [posts,review]
 author: Kane
 rating: ★★★☆☆
