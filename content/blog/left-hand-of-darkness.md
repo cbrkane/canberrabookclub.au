@@ -5,7 +5,7 @@ tags: [posts,review]
 author: Kane
 rating: ★★★☆☆
 ---
-{% getBookSlug the-left-hand-of-darkness %}
+[https://hardcover.app/books/the-left-hand-of-darkness](https://hardcover.app/books/the-left-hand-of-darkness)
 
 My Rating: ★★★☆☆
 
