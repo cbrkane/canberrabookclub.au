@@ -153,7 +153,7 @@ export default async function(eleventyConfig) {
 	  eleventyConfig.addAsyncShortcode("getBookSlug", async function (slug = "") {
 		const res = await getBookSlug(slug);
 		return `
-		<div style="position: relative; text-align: center; justify-self: center; width: 100%; ">
+		<div style="position: relative; text-align: center; justify-self: center; width: 30%; ">
 			<a href="https://hardcover.app/books/${res.slug}">
 				<div style="position: absolute; z-index:100; height: auto; max-height: 100%;  background: rgba(47, 79, 79, 0.7	);  color: white;  width: 100%; left: 0%; bottom: 0%;">
 					<p style=" filter: contrast(9) drop-shadow(.05em .05em black); "><b>${res.title}</b></p>
