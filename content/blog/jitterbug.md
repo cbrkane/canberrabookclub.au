@@ -3,11 +3,11 @@ title: Jitterbug - Gareth L. Powell
 date: 2026-01-26
 tags: [posts,review]
 author: Kane
-rating: ★★★★☆
+rating: ★★★✭☆
 ---
 {%getBookSlug "jitterbug-2026" %}
 
-My Rating: ★★★★☆
+My Rating: ★★★✭☆
 
 _Thanks to Netgalley and Titan Books for this early access eARC to enable this review._
 
