@@ -160,7 +160,7 @@ export default async function(eleventyConfig) {
 					<p style="filter: contrast(1) drop-shadow(.05em .05em  black);"><i>by ${res.author}</i></p>
 					<p style="filter: contrast(1) drop-shadow(.05em .05em black);">${res.rating} from ${res.ratings_count} ratings</p>
 				</div>
-				<img height="200px", style="display: block; height: auto; width: 100%;", src="${res.image}", alt="Book Cover"></img>
+				<img height="200px" style="display: block; height: auto; width: 100%;" src="${res.image}" alt="Book Cover">
 			</a>
 		</div>
 		`;
