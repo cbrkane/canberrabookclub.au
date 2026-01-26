@@ -5,7 +5,7 @@ tags: [posts,review]
 author: Kane
 rating: ★★★★☆
 ---
-{%getBookSlug jitterbug-2026 %}
+{%getBookSlug "jitterbug-2026" %}
 
 My Rating: ★★★★☆
 
