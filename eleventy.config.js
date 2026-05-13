@@ -182,7 +182,7 @@ export default async function(eleventyConfig) {
 					<p style="filter: contrast(1) drop-shadow(.05em .05em  black); margin-top: 5px; margin-bottom: 5px;"><i>by ${book.contributions[0]?.author.name}</i></p>
 					<p style="filter: contrast(1) drop-shadow(.05em .05em black); margin-top: 5px;">${(book.rating || 0).toFixed(2)} from ${book.ratings_count} ratings</p>
 				</div>
-				<img eleventy:heights="200px" eleventy:optional="placeholder" style="display: block; height: auto; width: 100%;" src="${book.image.url}", alt="Book Cover">
+				<img eleventy:heights="200px" eleventy:optional="placeholder" style="display: block; height: auto; width: 100%;" src="${book.image?.url}", alt="Book Cover">
 			</a>
 		</div>
 
